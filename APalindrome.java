@@ -41,6 +41,7 @@ public class APalindrome {
             {
                 return false;
             }
+
         }
         return true;
     }
