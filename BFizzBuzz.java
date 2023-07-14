@@ -45,5 +45,6 @@ public class BFizzBuzz {
 
         log.info("n = 100");
         fizzBuzz(100);
+
     }
 }
