@@ -24,7 +24,6 @@ public class DFindVowels {
             count += 1;}
         }
         return count;
-
     }
 
     @Test
