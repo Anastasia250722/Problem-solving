@@ -19,13 +19,17 @@ public class BFizzBuzz {
      * <p>Для вывода в консоль используй не System.out.println(), а log.info()</p>
      */
     public void fizzBuzz(int n) {
-        for (int i = 1; i <= n; i++) ;
-        if (n % 3 == 0)
-            log.info("fizz");
-        if (n % 5 == 0)
-            log.info("buzz");
-        if (n % 3 == 0 || n % 5 == 0)
-            log.info("fizzbuzz");
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                log.info("fizzbuzz");
+            }
+            else if (i % 3 == 0) {
+                log.info("fizz");
+            }
+            else if (i % 5 == 0) {
+                log.info("buzz");
+            }
+        }
 
     }
 

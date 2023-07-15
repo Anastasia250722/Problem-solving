@@ -32,15 +32,9 @@ public class APalindrome {
     }
 
     private boolean iaPalindrome(String str) {
-        int i1 = 0;
-        int i2 = str.length() - 1;
-        str = "";
 
-        for (int i = str.length() - 1; i >= 0; i--) {
-            if (str.charAt(i1) != str.charAt(i2)) ;
-            {
-                return false;
-            }
+        for (int i = 0, j = str.length() - 1; i < str.length()/2; i++, j--) {
+            if (!String.valueOf(str.charAt(i)).equalsIgnoreCase(String.valueOf(str.charAt(j)))) return false;
         }
         return true;
     }
@@ -53,5 +47,6 @@ public class APalindrome {
         assertTrue(iaPalindrome("тоПоТ"));
         assertTrue(iaPalindrome(""));
         assertFalse(iaPalindrome("фунКция"));
+        assertTrue(iaPalindrome("топпот"));
     }
 }
