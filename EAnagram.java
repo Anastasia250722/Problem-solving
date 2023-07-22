@@ -23,28 +23,25 @@ public class EAnagram {
      * <p>Преобразовать полученный массив к строке</p>
      * <p>Повторить тоже самое для второй строки</p>
      * <p>Сравнить полученные строки</p>
-     *
-     *
      */
     public static boolean isAnagram(String str1, String str2) {
         if (str1.length() != str2.length()) {
             return false;
         }
-        String[] str1Array = str1.split("");
-        String[] str2Array = str2.split("");
+        String[] str1Array = str1.toLowerCase().split("");
+        String[] str2Array = str2.toLowerCase().split("");
         Arrays.sort(str1Array);
         Arrays.sort(str2Array);
 
-        if (String.join("", str1Array).equalsIgnoreCase(String.join("", str2Array))) {
-            return true;
-        } else return false;
+        return Arrays.equals(str1Array, str2Array);
+       // return String.join("", str1Array).equals(String.join("", str2Array));
 
     }
 
 
     @Test
     public void test() {
-        //assertTrue(isAnagram("finder", "Friend"));
+        assertTrue(isAnagram("finder", "Friend"));
         assertTrue(isAnagram("up", "UP"));
         assertFalse(isAnagram("hello", "bye"));
         assertFalse(isAnagram("aba", "ba"));
