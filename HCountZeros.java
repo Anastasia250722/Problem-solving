@@ -13,7 +13,20 @@ public class HCountZeros {
 
 
     public static int countZeros(int n) {
-        return 0;
+        int count = 0;
+        for (int i = 10; i <= n; i +=10) {
+            count +=calcZerosInNum(i);
+        }
+        return count;
+    }
+
+    private static int calcZerosInNum(int n) {
+        int count = 0;
+        while (n>=10) {
+            n = n / 10;
+            count++;
+        }
+        return count;
     }
 
 

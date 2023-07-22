@@ -17,7 +17,8 @@ public class FFactorial {
      * Предлагаю реализовать рекурсивное решение из "Грокаем Алгоритмы"
      */
     public static int factorial(int n) {
-        return 0;
+        if (n == 1 || n == 0) return 1;
+        else return factorial(n - 1) * n;
     }
 
     @Test

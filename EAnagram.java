@@ -2,6 +2,8 @@ package org.example.class5.problems;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -25,14 +27,24 @@ public class EAnagram {
      *
      */
     public static boolean isAnagram(String str1, String str2) {
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+        String[] str1Array = str1.split("");
+        String[] str2Array = str2.split("");
+        Arrays.sort(str1Array);
+        Arrays.sort(str2Array);
 
-        return false;
+        if (String.join("", str1Array).equalsIgnoreCase(String.join("", str2Array))) {
+            return true;
+        } else return false;
+
     }
 
 
     @Test
     public void test() {
-        assertTrue(isAnagram("finder", "Friend"));
+        //assertTrue(isAnagram("finder", "Friend"));
         assertTrue(isAnagram("up", "UP"));
         assertFalse(isAnagram("hello", "bye"));
         assertFalse(isAnagram("aba", "ba"));

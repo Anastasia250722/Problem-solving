@@ -2,6 +2,8 @@ package org.example.class5.problems;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -18,10 +20,10 @@ public class DFindVowels {
      * В решении может помочь метод contains
      */
     int findVowels(String str) {
+        List<String> vowelsList = List.of("а", "я", "о", "ё", "у", "ю", "ы", "и", "э", "е");
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
-        if (str.contains("а") || str.contains("я") || str.contains("о") || str.contains("ё") || str.contains("ю") || str.contains("ы") || str.contains("и") || str.contains("э") || str.contains("у")) {
-            count += 1;}
+            if (vowelsList.contains(String.valueOf(str.charAt(i)).toLowerCase())) count += 1;
         }
         return count;
 

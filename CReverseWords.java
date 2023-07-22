@@ -26,18 +26,17 @@ public class CReverseWords {
      * <p>Подсказка в методах <b>splitStringToArray</b> и <b>arrayToString</b></p>
      */
     public static String reverseWords(String str) {
-        String[] strArray = str.split("");
+        String[] strArray = str.split(" ");
+        String[] targetArray = new String[strArray.length];
 
-        for (int i = str.length() - 1; i >= 0; i--) {
+        for (int i = strArray.length - 1, j = 0; i >= 0; j++, i--) {
 
-            strArray[i] = String.valueOf(i);
-            str = String.join("", strArray);
-            //System.out.println(str);
+            targetArray[j] = strArray[i];
         }
-
-        return str;
-
+        return String.join(" ", targetArray);
     }
+
+
 
     @Test
     void test() {
